@@ -1,10 +1,11 @@
-package com.stepanenko.myvocab.theme1.repository;
+package com.stepanenko.bookstore.repository;
 
-import com.stepanenko.myvocab.theme1.model.Book;
+import com.stepanenko.bookstore.model.Book;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
 import java.util.List;
+import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
@@ -35,6 +36,13 @@ public class BookRepositoryImpl implements BookRepository {
         try (EntityManager entityManager = entityManagerFactory.createEntityManager()) {
             return entityManager.createQuery("SELECT b FROM Book b", Book.class).getResultList();
         }
+    }
 
+    @Override
+    public Optional<Book> findById(Long id) {
+        try (EntityManager entityManager = entityManagerFactory.createEntityManager()) {
+            Book book = entityManager.find(Book.class, id);
+            return Optional.ofNullable(book);
+        }
     }
 }
