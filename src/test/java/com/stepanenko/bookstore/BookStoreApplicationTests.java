@@ -1,10 +1,10 @@
-package com.stepanenko.myvocab.theme1;
+package com.stepanenko.bookstore;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Theme1ApplicationTests {
+class BookStoreApplicationTests {
 
     @Test
     void contextLoads() {

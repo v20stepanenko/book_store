@@ -1,4 +1,4 @@
-package com.stepanenko.myvocab.theme1.model;
+package com.stepanenko.bookstore.model;
 
 import java.math.BigDecimal;
 import javax.persistence.Column;
